@@ -1,0 +1,35 @@
+#include <iostream>
+#include "BrazoRobotico.h" 
+
+int main() {
+
+    BrazoRobotico miBrazo;
+
+    miBrazo.mover(1.0, 2.0, 3.0);
+
+
+    std::cout << "Posición actual del brazo:" << std::endl;
+    std::cout << "Coordenada X: " << miBrazo.getX() << std::endl;
+    std::cout << "Coordenada Y: " << miBrazo.getY() << std::endl;
+    std::cout << "Coordenada Z: " << miBrazo.getZ() << std::endl;
+
+    miBrazo.coger();
+
+
+    if (miBrazo.estaSujetandoObjeto()) {
+        std::cout << "El brazo está sujetando un objeto." << std::endl;
+    } else {
+        std::cout << "El brazo no está sujetando un objeto." << std::endl;
+    }
+
+    miBrazo.soltar();
+
+   
+    if (miBrazo.estaSujetandoObjeto()) {
+        std::cout << "El brazo está sujetando un objeto." << std::endl;
+    } else {
+        std::cout << "El brazo no está sujetando un objeto." << std::endl;
+    }
+
+    return 0;
+}
